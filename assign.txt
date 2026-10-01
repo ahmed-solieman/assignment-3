@@ -1,0 +1,32 @@
+assignment solution
+
+
+Q1
+The Event Loop is a continuous loop in Node.js that handles asynchronous operations.
+It checks if the Call Stack is empty and moves callbacks from the Event Queue to the Call Stack
+without blocking the main thread.
+
+Q2
+Libuv is a C library used by Node.js. It handles the Event Loop and the Thread Pool, allowing Node.js to perform
+asynchronous I/O operations like reading files and handling network requests.
+
+Q3
+The main thread executes synchronous JavaScript code line by line.
+Asynchronous tasks (like file I/O) are offloaded to Libuv or the Thread Pool.
+The main thread keeps running the rest of the code without waiting.
+Once the async task completes, its callback is placed into the Event Queue.
+The Event Loop checks if the Call Stack is empty and pushes the callback to the Call Stack for execution.
+
+Q4
+Call Stack: The place where current executing functions are stacked and run.
+Event Queue: A queue that holds completed async callbacks waiting to be executed.
+Event Loop: The mechanism that transfers callbacks from the Event Queue to the Call Stack when the stack is empty
+
+Q5
+The Thread Pool is a set of background worker threads managed by Libuv for heavy operations like file system reading/writing
+
+
+Q6
+Blocking: Executes synchronously and pauses the program until the operation finishes as fs.readFileSync.
+Non-Blocking: Executes asynchronously in the background without stopping the rest of the code as fs.readFile
+
